@@ -18,7 +18,6 @@
 </p>
 <p align="center">
 	<img src="https://img.shields.io/badge/Nim-FFE953.svg?style=flat&logo=Nim&logoColor=black" alt="Nim">
-	<img src="https://img.shields.io/badge/HTML5-E34F26.svg?style=flat&logo=HTML5&logoColor=white" alt="HTML5">
 </p>
 <hr>
 
