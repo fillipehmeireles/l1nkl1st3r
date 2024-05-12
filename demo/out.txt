@@ -1,0 +1,5 @@
+link: http://example.com/5	ocurrences: 1
+link: http://example.com/6	ocurrences: 1
+link: http://example.com/3	ocurrences: 1
+link: http://example.com/4	ocurrences: 1
+link: http://example.com/1	ocurrences: 2
