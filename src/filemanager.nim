@@ -10,7 +10,7 @@ type
         filename*: string
         l*: Logger
 
-method writeReportFile*(self: FileManager, links: Table[string, int]): FileResult=
+proc writeReportFile*(self: FileManager, links: Table[string, int]): FileResult=
     try:
         let f = open(self.filename, fmWrite)
         defer: f.close()

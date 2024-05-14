@@ -10,7 +10,7 @@ type
     HttpCli* = object
         l*: Logger
 
-method makeGetRequest*(self: HttpCli, url: string): Option[ResponseStats] = 
+proc makeGetRequest*(self: HttpCli, url: string): Option[ResponseStats] = 
     try:
         let client: HttpClient = newHttpClient()
         defer: client.close() 

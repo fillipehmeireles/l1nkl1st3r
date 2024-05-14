@@ -12,10 +12,10 @@ type
         beginMeta: string
         endMeta: string = "\x1b[0m"
 
-method errorMetaColor(self: var ColoredMeta)  =
+proc errorMetaColor(self: var ColoredMeta)  =
     self.beginMeta = "\x1b[" &  ColorCodeRed & "m"
 
-method successMetaColor(self: var ColoredMeta)  =
+proc successMetaColor(self: var ColoredMeta)  =
     self.beginMeta = "\x1b[" & ColorCodeGreen & "m"
 
 type
@@ -26,15 +26,15 @@ type
 proc `colored=`*(l: var Logger, v: bool) {.inline.} =
     l.c = v
 
-method printCapturedLinks*(self: Logger, links: Table[string, int])  =
+proc printCapturedLinks*(self: Logger, links: Table[string, int])  =
     if self.c: self.coloredMeta.successMetaColor()
     for l, o in links:
         echo self.coloredMeta.beginMeta, "link: " ,l, "\t","ocurrences: ", o ,  self.coloredMeta.endMeta
 
-method printError*(self: Logger, text: string) = 
+proc printError*(self: Logger, text: string) =
     if self.c: self.coloredMeta.errorMetaColor()
     echo self.coloredMeta.beginMeta, text , self.coloredMeta.endMeta
 
-method printSuccess*(self: Logger, text: string) = 
+proc printSuccess*(self: Logger, text: string) =
     if self.c: self.coloredMeta.successMetaColor()
     echo self.coloredMeta.beginMeta, text , self.coloredMeta.endMeta
